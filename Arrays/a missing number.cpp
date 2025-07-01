@@ -38,3 +38,19 @@ public:
         return xor1 ^ xor2;
     }
 };
+
+
+
+class Solution {
+  public:
+    int missingNum(vector<int>& arr) {
+        int n=arr.size()+1;
+       long long sum=(n*1LL* (n+1)) /2;
+       int sum1=0;
+       for(int i=0; i<n-1; i++){
+           sum1+=arr[i];
+       }
+       return sum-sum1;
+    }
+};
+
