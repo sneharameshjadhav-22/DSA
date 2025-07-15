@@ -73,4 +73,60 @@ public:
  * int param_3 = obj->top();
  * int param_4 = obj->getMin();
  */
- 
+ class Solution {
+    stack<int>st;
+    stack<int>min;
+  public:
+    Solution() {
+        // code here
+        
+    }
+
+    // Add an element to the top of Stack
+    void push(int x) {
+        if(min.empty() || x<=min.top()){
+            min.push(x);
+        }
+        st.push(x);
+        
+        // code here
+    }
+
+    // Remove the top element from the Stack
+        
+    void pop() {
+        // code here
+        
+       if(!st.empty()){
+           int topv=st.top();
+           st.pop();
+           if(topv==min.top()){
+               min.pop();
+           }
+           
+       }
+        
+    }
+
+        
+    // Returns top element of the Stack
+    int peek() {
+        // code here
+        if(!st.empty()){
+            return st.top();
+        }else{
+            return -1;
+        }
+    }
+        
+
+    // Finds minimum element of Stack
+    int getMin() {
+        // code here
+        if(!min.empty()){
+            return min.top();
+        }else{
+            return -1;
+        }
+    }
+};
