@@ -18,3 +18,44 @@ public:
         
     }
 };
+
+
+
+/* Link list Node
+struct Node {
+    int data;
+    Node* next;
+
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+
+}; */
+class Solution {
+  public:
+    /* Should return data of middle node. If linked list is empty, then -1 */
+    int getlength(Node* head){
+        Node*temp=head;
+        int len=0;
+        while(temp!=NULL){
+            len++;
+            temp=temp->next;
+        }
+        return len;
+    }
+    int getMiddle(Node* head) {
+        // code here
+        Node* temp=head;
+        int length=getlength(head);
+        int le=length/2;
+        while(le>0){
+            le--;
+            temp=temp->next;
+            
+            
+        }
+        return temp->data;
+        
+    }
+};
