@@ -31,4 +31,23 @@ public:
         
     }
 };
- 
+
+
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+       if(n<=0){
+        return false;
+       }
+       int i=0;
+       while(pow(3, i)<=n){
+        if(n==pow(3,i )){
+            return true;
+        }
+        i++;
+
+       }
+       return false;
+        
+    }
+};
