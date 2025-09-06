@@ -42,3 +42,32 @@ public:
         
     }
 };
+
+
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        for(int i=0; i<n; i++){
+            int val=nums2[i];
+            bool ptrr=false;
+            for(int j=0; j<m; j++){
+                if(val <=nums1[j]){
+                    nums1.insert(nums1.begin()+j, val);
+                    nums1.pop_back();
+                    ptrr=true;
+                    m++;
+                    break;
+                }
+            }
+            if(!ptrr){
+            nums1[m]=val;
+            m++;
+
+        }
+        }
+        
+        
+    }
+};
+
+
