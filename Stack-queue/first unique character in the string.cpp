@@ -48,3 +48,31 @@ public:
         
     }
 };
+
+
+
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        int n=s.size();
+        queue<int>q;
+        vector<int>fre(26, 0);
+        for(int i=0; i<n; i++){
+            char c =s[i];
+            fre[c-'a']++;
+            q.push(i);
+            while(!q.empty() && fre[s[q.front()]-'a']>1){
+                q.pop();
+            }
+
+        }
+        if(q.empty()){
+            return -1;
+        }else{
+            return q.front();
+        }
+       
+
+        
+    }
+};
